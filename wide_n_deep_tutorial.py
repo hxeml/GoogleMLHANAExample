@@ -200,7 +200,7 @@ def InsertDataToSAPHana(results, params):
     insertStatement = "INSERT INTO " + tensor_schema + "." + tensor_result_table + " VALUES"
     insertStatement += "("
     insertStatement += "CURRENT_TIMESTAMP, "
-    for key in sorted(results):
+    for key in util.METRICS:
       insertStatement += "'"
       insertStatement += str(results[key])
       insertStatement += "'"
